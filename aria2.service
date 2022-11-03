@@ -1,0 +1,11 @@
+[Unit]
+Description=Aria2 Service
+After=network.target
+
+[Service]
+User=root
+ExecStart=/usr/bin/aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --console-log-level=warn --conf-path=/mnt/omv/aria2/aria2.conf
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
